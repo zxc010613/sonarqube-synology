@@ -5,13 +5,21 @@
 This repository provides a script for simple installation of sonarqube in Synology.  
 The script was tested in DSM 7.0.
 ## Table of Contents
-
+- [Known Issues](#known-issues)
 - [Install](#install)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
-
+## Known Issues
+### vm.max_map_count [65530] is too low, increase to at least
+When Synology is rebooted, the following log appears.
+> [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```bash
+ssh ...
+sudo -i
+sysctl -w vm.max_map_count=524288
+```
 ## Install
 
 ```bash
